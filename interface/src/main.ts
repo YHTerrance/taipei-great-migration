@@ -9,22 +9,71 @@ import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
 import OSM from 'ol/source/OSM';
 
-import Link from 'ol/interaction/Link';
-
 import Map from 'ol/Map';
 import View from 'ol/View';
 
 import { Style, Fill, Stroke } from 'ol/style';
 import { fromLonLat } from 'ol/proj';
 
+import bezier from '@turf/bezier-spline';
+
 // Define the projection
 proj4.defs('EPSG:3826', '+proj=tmerc +lat_0=0 +lon_0=121 +k=0.9999 +x_0=250000 +y_0=0 +ellps=GRS80 +units=m +no_defs');
 register(proj4);
 
-const geojsonFormat = new GeoJSON({
+const geojsonFormat: GeoJSON = new GeoJSON({
     dataProjection: 'EPSG:3826',
-    featureProjection: 'EPSG:3857',
+    featureProjection: 'EPSG:3857', // 3857: Flat | 4326: Curved
 });
+
+const strokeStyle = new Stroke({
+    color: "red",
+    width: 2,
+});
+
+// Fetch stations data and draw lines
+const source = new VectorSource();
+
+const migrations = new VectorLayer({
+    source: source
+});
+
+fetch('/data/metro-station.json')
+    .then(response => response.json())
+    .then(geojsonObject => {
+        const features = geojsonFormat.readFeatures(geojsonObject);
+
+        const startCoords = features[0].getGeometry().getCoordinates();
+        const endCoords = features[20].getGeometry().getCoordinates();
+        const controlCoords = [endCoords[0], startCoords[1]];
+
+        const line = {
+            "type": "Feature",
+            "properties": {
+                "stroke": "#f00"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    startCoords,
+                    controlCoords,
+                    endCoords
+                ]
+            }
+        };
+
+        const curved = bezier(line);
+
+        const curveFeature = (new GeoJSON()).readFeature(curved);
+
+        console.log(curveFeature)
+
+        curveFeature.setStyle(new Style({
+            stroke: strokeStyle,
+        }));
+
+        source.addFeature(curveFeature);
+    });
 
 const stations = new VectorLayer({
     source: new VectorSource({
@@ -40,13 +89,6 @@ const lines = new VectorLayer({
     }),
 });
 
-const countries = new VectorLayer({
-    source: new VectorSource({
-        format: new GeoJSON(),
-        url: '/data/countries.json'
-    }),
-});
-
 const base = new TileLayer({
     source: new OSM(),
 });
@@ -57,12 +99,11 @@ const map = new Map({
         // base,
         stations,
         lines,
+        migrations,
     ],
     view: new View({
         center: fromLonLat([121.46, 25.05]),
         zoom: 12,
-        projection: 'EPSG:3857',
     }),
 });
 
-map.addInteraction(new Link());
