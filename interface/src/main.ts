@@ -38,41 +38,57 @@ const migrations = new VectorLayer({
     source: source
 });
 
+function addCurve(startCoords, endCoords) {
+    const controlCoords = [endCoords[0], startCoords[1]];
+
+    const line = {
+        "type": "Feature",
+        "properties": {
+            "stroke": "#f00"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                startCoords,
+                controlCoords,
+                endCoords
+            ]
+        }
+    };
+
+    const curved = bezier(line);
+    const curveFeature = (new GeoJSON()).readFeature(curved);
+
+    curveFeature.setStyle(new Style({
+        stroke: strokeStyle,
+    }));
+
+    source.addFeature(curveFeature);
+}
+
 fetch('/data/metro-station.json')
     .then(response => response.json())
     .then(geojsonObject => {
         const features = geojsonFormat.readFeatures(geojsonObject);
 
-        const startCoords = features[0].getGeometry().getCoordinates();
-        const endCoords = features[20].getGeometry().getCoordinates();
-        const controlCoords = [endCoords[0], startCoords[1]];
+        const stationToIndex = {};
 
-        const line = {
-            "type": "Feature",
-            "properties": {
-                "stroke": "#f00"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    startCoords,
-                    controlCoords,
-                    endCoords
-                ]
-            }
-        };
+        const fromStation = ["石牌"];
+        const toStations = ["西湖", "中山", "內湖"];
 
-        const curved = bezier(line);
+        features.forEach((feature, index) => {
+            const name = feature.getProperties()["NAME"];
+            stationToIndex[name] = index;
+        });
 
-        const curveFeature = (new GeoJSON()).readFeature(curved);
+        const fromFeature = features[stationToIndex[fromStation + "站"]];
+        const toFeatures = toStations.map(station => features[stationToIndex[station + "站"]]);
 
-        console.log(curveFeature)
-
-        curveFeature.setStyle(new Style({
-            stroke: strokeStyle,
-        }));
-
-        source.addFeature(curveFeature);
+        toFeatures.forEach(toFeature => {
+            const startCoords = fromFeature.getGeometry().getCoordinates();
+            const endCoords = toFeature.getGeometry().getCoordinates();
+            addCurve(startCoords, endCoords);
+        });
     });
 
 const stations = new VectorLayer({

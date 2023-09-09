@@ -1097,22 +1097,6 @@
     },
     {
       "type" : "Feature",
-      "id" : 68,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          304892.5954283817,
-          2771679.9278445314
-        ]
-      },
-      "properties" : {
-        "FID CODE" : 68,
-        "NAME" : "南京復興站",
-        "LOC" : "復興北路與南京東路交叉口(木柵線)"
-      }
-    },
-    {
-      "type" : "Feature",
       "id" : 69,
       "geometry" : {
         "type" : "Point",
@@ -1669,22 +1653,6 @@
         "FID CODE" : 103,
         "NAME" : "南京復興站",
         "LOC" : "復興北路與南京東路交叉口(松山線)"
-      }
-    },
-    {
-      "type" : "Feature",
-      "id" : 104,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          303783.81235838833,
-          2771645.8549764245
-        ]
-      },
-      "properties" : {
-        "FID CODE" : 104,
-        "NAME" : "松江南京站",
-        "LOC" : "松江路與南京東路交叉口(松山線)"
       }
     },
     {
