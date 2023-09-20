@@ -15,10 +15,30 @@
             width: 100%;
             font-family: sans-serif;
         }
+        #tools {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        #tools select {
+            display: inline-block;
+            background: white;
+            cursor: pointer;
+        }
     </style>
   </head>
   <body>
     <div id="map-container">
+    </div>
+    <div id="tools">
+        <label for="from_station_dropdown">From:</label>
+        <select id="from_station">
+            <option value="石牌">石牌</option>
+        </select>
+        <label for="to_station_dropdown">To:</label>
+        <select id="to_station">
+            <option value="石牌">石牌</option>
+        </select>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>

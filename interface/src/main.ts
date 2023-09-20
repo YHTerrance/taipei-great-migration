@@ -17,6 +17,7 @@ import { Style, Fill, Stroke } from 'ol/style';
 import { Point } from 'ol/geom';
 
 import bezier from '@turf/bezier-spline';
+import { Feature } from 'ol';
 
 // Define the projection
 proj4.defs('EPSG:3826', '+proj=tmerc +lat_0=0 +lon_0=121 +k=0.9999 +x_0=250000 +y_0=0 +ellps=GRS80 +units=m +no_defs');
@@ -38,6 +39,73 @@ const source = new VectorSource();
 const migrations = new VectorLayer({
     source: source
 });
+
+let features: Feature[];
+let stationToIndex: Map;
+let stations: string[];
+
+fetch('/data/metro-station.json')
+    .then(response => response.json())
+    .then(geojsonObject => {
+
+        stations = [];
+        features = geojsonFormat.readFeatures(geojsonObject);
+        stationToIndex = new Map();
+        features.forEach((feature, index) => {
+            const name: string = feature.getProperties()["NAME"];
+            stations.push(name);
+            stationToIndex.set(name, index);
+        });
+    });
+
+const stationsLayer = new VectorLayer({
+    source: new VectorSource({
+        format: geojsonFormat,
+        url: '/data/metro-station.json'
+    }),
+});
+
+const metroLinesLayer = new VectorLayer({
+    source: new VectorSource({
+        format: geojsonFormat,
+        url: '/data/metro-line.json'
+    }),
+});
+
+// const base = new TileLayer({
+//     source: new OSM(),
+// });
+
+new Map({
+    target: 'map-container',
+    layers: [
+        // base,
+        stationsLayer,
+        metroLinesLayer,
+        migrations,
+    ],
+    view: new View({
+        center: fromLonLat([121.46, 25.05]),
+        zoom: 12,
+    }),
+});
+
+// Helper functions
+
+function renderLines() {
+    const fromStation = "石牌";
+    const toStations = ["西湖", "中山", "內湖", "紅樹林"];
+
+    const fromFeature = features[stationToIndex.get(fromStation + "站")];
+    const toFeatures = toStations.map(station => features[stationToIndex.get(station + "站")]);
+
+    toFeatures.forEach(toFeature => {
+        const startCoords = (fromFeature?.getGeometry() as Point).getCoordinates();
+        const endCoords = (toFeature?.getGeometry() as Point).getCoordinates();
+
+        addCurve(startCoords, endCoords);
+    });
+}
 
 function addCurve(startCoords: Array<number>, endCoords: Array<number>) {
 
@@ -70,62 +138,3 @@ function addCurve(startCoords: Array<number>, endCoords: Array<number>) {
 
     source.addFeature(curveFeature);
 }
-
-fetch('/data/metro-station.json')
-    .then(response => response.json())
-    .then(geojsonObject => {
-        const features = geojsonFormat.readFeatures(geojsonObject);
-
-        const stationToIndex = new Map();
-
-        const fromStation = ["石牌"];
-        const toStations = ["西湖", "中山", "內湖", "紅樹林"];
-
-        features.forEach((feature, index) => {
-            const name: string = feature.getProperties()["NAME"];
-            stationToIndex.set(name, index);
-        });
-
-        const fromFeature = features[stationToIndex.get(fromStation + "站")];
-        const toFeatures = toStations.map(station => features[stationToIndex.get(station + "站")]);
-
-        toFeatures.forEach(toFeature => {
-            const startCoords = (fromFeature?.getGeometry() as Point).getCoordinates();
-            const endCoords = (toFeature?.getGeometry() as Point).getCoordinates();
-
-            addCurve(startCoords, endCoords);
-        });
-    });
-
-const stations = new VectorLayer({
-    source: new VectorSource({
-        format: geojsonFormat,
-        url: '/data/metro-station.json'
-    }),
-});
-
-const lines = new VectorLayer({
-    source: new VectorSource({
-        format: geojsonFormat,
-        url: '/data/metro-line.json'
-    }),
-});
-
-const base = new TileLayer({
-    source: new OSM(),
-});
-
-new Map({
-    target: 'map-container',
-    layers: [
-        // base,
-        stations,
-        lines,
-        migrations,
-    ],
-    view: new View({
-        center: fromLonLat([121.46, 25.05]),
-        zoom: 12,
-    }),
-});
-
