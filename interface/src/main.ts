@@ -1,5 +1,6 @@
 import proj4 from 'proj4';
 import { register } from 'ol/proj/proj4';
+import { fromLonLat } from 'ol/proj';
 
 import GeoJSON from 'ol/format/GeoJSON';
 
@@ -13,7 +14,7 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 
 import { Style, Fill, Stroke } from 'ol/style';
-import { fromLonLat } from 'ol/proj';
+import { Point } from 'ol/geom';
 
 import bezier from '@turf/bezier-spline';
 
@@ -38,8 +39,12 @@ const migrations = new VectorLayer({
     source: source
 });
 
-function addCurve(startCoords, endCoords) {
-    const controlCoords = [endCoords[0], startCoords[1]];
+function addCurve(startCoords: Array<number>, endCoords: Array<number>) {
+
+    const controlCoords = [
+        (startCoords[0] + endCoords[0]) / 2,
+        (startCoords[1] + endCoords[1]) / 1.996
+    ];
 
     const line = {
         "type": "Feature",
@@ -71,22 +76,23 @@ fetch('/data/metro-station.json')
     .then(geojsonObject => {
         const features = geojsonFormat.readFeatures(geojsonObject);
 
-        const stationToIndex = {};
+        const stationToIndex = new Map();
 
         const fromStation = ["石牌"];
-        const toStations = ["西湖", "中山", "內湖"];
+        const toStations = ["西湖", "中山", "內湖", "紅樹林"];
 
         features.forEach((feature, index) => {
-            const name = feature.getProperties()["NAME"];
-            stationToIndex[name] = index;
+            const name: string = feature.getProperties()["NAME"];
+            stationToIndex.set(name, index);
         });
 
-        const fromFeature = features[stationToIndex[fromStation + "站"]];
-        const toFeatures = toStations.map(station => features[stationToIndex[station + "站"]]);
+        const fromFeature = features[stationToIndex.get(fromStation + "站")];
+        const toFeatures = toStations.map(station => features[stationToIndex.get(station + "站")]);
 
         toFeatures.forEach(toFeature => {
-            const startCoords = fromFeature.getGeometry().getCoordinates();
-            const endCoords = toFeature.getGeometry().getCoordinates();
+            const startCoords = (fromFeature?.getGeometry() as Point).getCoordinates();
+            const endCoords = (toFeature?.getGeometry() as Point).getCoordinates();
+
             addCurve(startCoords, endCoords);
         });
     });
@@ -109,7 +115,7 @@ const base = new TileLayer({
     source: new OSM(),
 });
 
-const map = new Map({
+new Map({
     target: 'map-container',
     layers: [
         // base,
