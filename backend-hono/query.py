@@ -11,7 +11,8 @@ cur = conn.cursor()
 query = """SELECT [出站], SUM([人次]) as Total_Passengers
 FROM [202307]
 WHERE [進站] = '石牌'
-GROUP BY [出站]"""
+GROUP BY [出站]
+ORDER BY Total_Passengers DESC"""
 
 # Execute the query
 cur.execute(query)
