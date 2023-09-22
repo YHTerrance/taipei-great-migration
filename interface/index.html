@@ -32,26 +32,29 @@
     </div>
     <div id="tools">
 
-        <label for="from_station_dropdown">進站</label>
-        <select id="from_station_dropdown">
-            <option value="石牌">石牌</option>
+        <label for="from-station">進站</label>
+        <select id="from-station">
+            <option value=null>-</option>
         </select>
-        <label for="to_station_dropdown">出站</label>
-        <select id="to_station">
-            <option value="石牌">石牌</option>
+        <label for="to-station">出站</label>
+        <select id="to-station">
+            <option value=null>-</option>
         </select>
 
         <br/>
 
-        <label for="start_time_dropdown">開始時間</label>
-        <select id="sdtart_time_dropdown">
-            <option value="7">7</option>
+        <label for="start-time">開始時間</label>
+        <select id="start-time">
         </select>
-        <label for="end_time_dropdown">結束時間</label>
-        <select id="end_time_dropdown">
-            <option value="10">10</option>
+        <label for="end-time">結束時間</label>
+        <select id="end-time">
         </select>
 
+        <br/>
+
+        <button id="render">
+            Render
+        </button>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
