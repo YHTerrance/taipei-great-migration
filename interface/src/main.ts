@@ -18,6 +18,7 @@ import { Point } from 'ol/geom';
 
 import { Feature, Overlay } from 'ol';
 
+// @ts-ignore
 import bezier from '@turf/bezier-spline';
 
 // Define the projection
@@ -82,6 +83,7 @@ const metroLinesLayer = new VectorLayer({
         return new Style({
             stroke: new Stroke({
                 width: 3,
+                // @ts-ignore
                 color: routeColor[route],
             })
         });
@@ -139,6 +141,7 @@ fetch('/data/metro-station.json')
     });
 
 const base = new TileLayer({
+    // @ts-ignore
     source: new StadiaMaps({
         layer: "alidade_smooth",
         retina: true,
