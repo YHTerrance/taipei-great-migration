@@ -1,0 +1,20 @@
+# fly.toml app configuration file generated for taipei-great-migration on 2023-09-29T23:08:38+08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "taipei-great-migration"
+primary_region = "sin"
+
+[build]
+
+[env]
+  PORT = "8080"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]

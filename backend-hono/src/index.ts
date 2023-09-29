@@ -83,4 +83,7 @@ async function getPassengerOD(table: string, startTime: number, endTime: number,
     return res;
 }
 
-export default app
+export default {
+    port: 3000,
+    fetch: app.fetch,
+};
