@@ -8,17 +8,17 @@ import TileLayer from 'ol/layer/Tile';
 import VectorLayer from 'ol/layer/Vector';
 
 import VectorSource from 'ol/source/Vector';
-import OSM from 'ol/source/OSM';
+import StadiaMaps from 'ol/source/StadiaMaps';
 
 import Map from 'ol/Map';
 import View from 'ol/View';
 
-import { Style, Fill, Stroke } from 'ol/style';
+import { Style, Stroke, Fill, Circle } from 'ol/style';
 import { Point } from 'ol/geom';
 
+import { Feature, Overlay } from 'ol';
+
 import bezier from '@turf/bezier-spline';
-import { Feature } from 'ol';
-import { containsCoordinate } from 'ol/extent';
 
 // Define the projection
 proj4.defs('EPSG:3826', '+proj=tmerc +lat_0=0 +lon_0=121 +k=0.9999 +x_0=250000 +y_0=0 +ellps=GRS80 +units=m +no_defs');
@@ -29,6 +29,22 @@ const geojsonFormat: GeoJSON = new GeoJSON({
     featureProjection: 'EPSG:3857', // 3857: Flat | 4326: Curved
 });
 
+const routeColor = {
+    "淡水線": "#e3002c",
+    "蘆洲線": "#f8b61c",
+    "板橋線": "#0070bd",
+    "中和線": "#f8b61c",
+    "新店線": "#008659",
+    "碧潭支線": "#cfdb00",
+    "新莊線": "#f8b61c",
+    "木柵線": "#c48c31",
+    "南港線": "#0070bd",
+    "信義線": "#e3002c",
+    "松山線": "#008659",
+    "小南門線": "#008659",
+    "內湖線": "#c48c31",
+    "環狀線": "#ffdb00"
+}
 
 // Fetch stations data and draw lines
 const source = new VectorSource();
@@ -42,6 +58,18 @@ const stationsLayer = new VectorLayer({
         format: geojsonFormat,
         url: '/data/metro-station.json'
     }),
+    style: new Style({
+        image: new Circle({
+            fill: new Fill({
+                color: 'rgba(200,200,200,0.5)',
+            }),
+            stroke: new Stroke({
+                color: 'rgba(255,255,255,0.8)',
+                width: 1,
+            }),
+            radius: 3,
+        }),
+    }),
 });
 
 const metroLinesLayer = new VectorLayer({
@@ -49,6 +77,15 @@ const metroLinesLayer = new VectorLayer({
         format: geojsonFormat,
         url: '/data/metro-line.json'
     }),
+    style: function(feature) {
+        const route = feature.get("RouteName");
+        return new Style({
+            stroke: new Stroke({
+                width: 3,
+                color: routeColor[route],
+            })
+        });
+    }
 });
 
 fetch('/data/metro-station.json')
@@ -101,22 +138,70 @@ fetch('/data/metro-station.json')
         });
     });
 
-// const base = new TileLayer({
-//     source: new OSM(),
-// });
+const base = new TileLayer({
+    source: new StadiaMaps({
+        layer: "alidade_smooth",
+        retina: true,
+    }),
+});
 
-new Map({
+const map = new Map({
     target: 'map-container',
     layers: [
-        // base,
-        stationsLayer,
+        base,
         metroLinesLayer,
+        stationsLayer,
         migrations,
     ],
     view: new View({
         center: fromLonLat([121.46, 25.05]),
         zoom: 12,
     }),
+});
+
+// Create a listener for the `pointermove` event on the map.
+map.on('pointermove', function(e) {
+    // Check if there is a feature at the current mouse position.
+    var feature = map.forEachFeatureAtPixel(
+        e.pixel,
+        function(feature) {
+            return feature;
+        },
+        {
+            layerFilter: function(layerCandidate) {
+                return layerCandidate == migrations;
+            },
+            hitTolerance: 5,
+        }
+    );
+
+    let popup = map.getOverlayById("popup");
+
+    if (!popup) {
+        // Create a popup with information about the feature.
+        popup = new Overlay({
+            id: "popup",
+            element: document.getElementById('popup') as HTMLElement
+        });
+        // Add the popup to the map.
+        map.addOverlay(popup);
+    }
+
+    // If there is a feature at the current mouse position, display a popup with information about the feature.
+    if (feature) {
+        // Set the popup's position to the current mouse position.
+        popup.setPosition(e.coordinate);
+        popup.setOffset([0, -60]);
+
+        // Set the popup's content to the feature's information.
+        const popupElement = popup.getElement() as HTMLElement;
+        popupElement.innerHTML = `${feature.get('from')} -> ${feature.get('to')}<br> ${feature.get('passengers')} 人次`
+        popupElement.style.display = "block";
+    }
+    else {
+        // If there is no feature at the current mouse position, remove the popup from the map.
+        (popup.getElement() as HTMLElement).style.display = "none";
+    }
 });
 
 // Helper functions
@@ -154,7 +239,7 @@ function generateOptions(stations: string[]) {
     }
 }
 
-function renderLines(features: Feature[], stationToIndex: Map, fromStation: string, toStation: string, data: []) {
+function renderLines(features: Feature[], stationToIndex: Map, fromStation: string, toStation: string, data: any[]) {
 
     const totalPassengers = data.reduce((acc, station) => acc + station["Total_Passengers"], 0);
 
@@ -162,15 +247,16 @@ function renderLines(features: Feature[], stationToIndex: Map, fromStation: stri
         const fromFeature = features[stationToIndex.get(fromStation)];
         const toFeature = features[stationToIndex.get(toStation)];
 
-        addCurve(fromFeature, toFeature, 0.5);
+        if (data.length > 0) {
+            addCurve(fromFeature, toFeature, 0.1, data[0]["Total_Passengers"]);
+        }
     }
     else if (fromStation != "null") {
         const fromFeature = features[stationToIndex.get(fromStation)];
 
         data.forEach(station => {
             const toFeature = features[stationToIndex.get(station["出站"] + "站")];
-            const weight = station["Total_Passengers"] / totalPassengers;
-            addCurve(fromFeature, toFeature, weight);
+            addCurve(fromFeature, toFeature, station["Total_Passengers"] / totalPassengers, station["Total_Passengers"]);
         });
     }
     else if (toStation != "null") {
@@ -178,23 +264,32 @@ function renderLines(features: Feature[], stationToIndex: Map, fromStation: stri
 
         data.forEach(station => {
             const fromFeature = features[stationToIndex.get(station["進站"] + "站")];
-            const weight = station["Total_Passengers"] / totalPassengers;
-            addCurve(fromFeature, toFeature, weight);
+            addCurve(fromFeature, toFeature, station["Total_Passengers"] / totalPassengers, station["Total_Passengers"]);
         });
     }
 
 }
 
-function addCurve(fromFeature: Feature, toFeature: Feature, weight: number) {
+function addCurve(fromFeature: Feature, toFeature: Feature, weight: number, passengers: number) {
 
     // console.log(fromFeature, toFeature)
     if(fromFeature == undefined || toFeature == undefined) {
-        console.log("undefined feature")
+        console.log("undefined feature");
+        return;
+    }
+
+    if (fromFeature == toFeature) {
+        console.log("same feature");
         return;
     }
 
     const startCoords = (fromFeature?.getGeometry() as Point).getCoordinates();
     const endCoords = (toFeature?.getGeometry() as Point).getCoordinates();
+
+    if (startCoords == undefined || endCoords == undefined) {
+        console.log("undefined coordinates");
+        return;
+    }
 
     const controlCoords = [
         (startCoords[0] + endCoords[0]) / 2,
@@ -220,8 +315,14 @@ function addCurve(fromFeature: Feature, toFeature: Feature, weight: number) {
     const curveFeature = (new GeoJSON()).readFeature(curved);
 
     const strokeStyle = new Stroke({
-        color: "red",
-        width: 50 * weight,
+        color: "gray",
+        width: weight * 50,
+    });
+
+    curveFeature.setProperties({
+        "from": fromFeature.get("NAME"),
+        "to": toFeature.get("NAME"),
+        "passengers": passengers,
     });
 
     curveFeature.setStyle(new Style({

@@ -25,11 +25,22 @@
             background: white;
             cursor: pointer;
         }
+        #popup {
+            position: absolute;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            width: 200px;
+            display: none;
+            text-align: center;
+        }
     </style>
   </head>
   <body>
-    <div id="map-container">
-    </div>
+    <div id="popup"></div>
+    <div id="map-container"></div>
     <div id="tools">
 
         <label for="from-station">進站</label>
