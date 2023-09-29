@@ -122,7 +122,7 @@ fetch('/data/metro-station.json')
 
             console.log(body);
 
-            fetch('http://localhost:3000/api/od', {
+            fetch(import.meta.env.VITE_BACKEND_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'Application/json'
@@ -241,30 +241,30 @@ function generateOptions(stations: string[]) {
 
 function renderLines(features: Feature[], stationToIndex: Map, fromStation: string, toStation: string, data: any[]) {
 
-    const totalPassengers = data.reduce((acc, station) => acc + station["Total_Passengers"], 0);
+    const totalPassengers = data.reduce((acc, station) => acc + station["total_passengers"], 0);
 
     if (fromStation != "null" && toStation != "null") {
         const fromFeature = features[stationToIndex.get(fromStation)];
         const toFeature = features[stationToIndex.get(toStation)];
 
         if (data.length > 0) {
-            addCurve(fromFeature, toFeature, 0.1, data[0]["Total_Passengers"]);
+            addCurve(fromFeature, toFeature, 0.02, data[0]["total_passengers"]);
         }
     }
     else if (fromStation != "null") {
         const fromFeature = features[stationToIndex.get(fromStation)];
 
         data.forEach(station => {
-            const toFeature = features[stationToIndex.get(station["出站"] + "站")];
-            addCurve(fromFeature, toFeature, station["Total_Passengers"] / totalPassengers, station["Total_Passengers"]);
+            const toFeature = features[stationToIndex.get(station["exit"] + "站")];
+            addCurve(fromFeature, toFeature, station["total_passengers"] / totalPassengers, station["total_passengers"]);
         });
     }
     else if (toStation != "null") {
         const toFeature = features[stationToIndex.get(toStation)];
 
         data.forEach(station => {
-            const fromFeature = features[stationToIndex.get(station["進站"] + "站")];
-            addCurve(fromFeature, toFeature, station["Total_Passengers"] / totalPassengers, station["Total_Passengers"]);
+            const fromFeature = features[stationToIndex.get(station["entry"] + "站")];
+            addCurve(fromFeature, toFeature, station["total_passengers"] / totalPassengers, station["total_passengers"]);
         });
     }
 
@@ -316,7 +316,7 @@ function addCurve(fromFeature: Feature, toFeature: Feature, weight: number, pass
 
     const strokeStyle = new Stroke({
         color: "gray",
-        width: weight * 50,
+        width: weight * 100,
     });
 
     curveFeature.setProperties({

@@ -1,33 +1,9 @@
 import { Hono } from 'hono'
-import { Database } from "bun:sqlite";
 import { cors } from 'hono/cors'
 
-const app = new Hono()
+import psql from './postgres';
 
-const db = new Database("202307.sqlite", { readonly: true });
-
-const from_query = db.query(`
-    SELECT [出站], SUM([人次]) as Total_Passengers
-    FROM [202307]
-    WHERE [進站] = $from_station AND [時段] >= $start_time AND [時段] < $end_time
-    GROUP BY [出站]
-    ORDER BY Total_Passengers DESC
-`);
-
-const to_query = db.query(`
-    SELECT [進站], SUM([人次]) as Total_Passengers
-    FROM [202307]
-    WHERE [出站] = $to_station AND [時段] >= $start_time AND [時段] < $end_time
-    GROUP BY [進站]
-    ORDER BY Total_Passengers DESC
-`);
-
-const from_to_query = db.query(`
-    SELECT SUM([人次]) as Total_Passengers
-    FROM [202307]
-    WHERE [出站] = $to_station AND [進站] = $from_station AND [時段] >= $start_time AND [時段] < $end_time
-    GROUP BY [進站], [出站]
-`);
+const app = new Hono();
 
 function parseStation(station: string) {
     if (station.endsWith("站")) {
@@ -39,7 +15,7 @@ function parseStation(station: string) {
 app.get('/', (c) => c.text('Hono API server that serves Taipei MRT OD data.'))
 
 app.use('*', cors({
-    origin: 'http://localhost:5173',
+    origin: process.env.FRONTEND_URL as string,
     allowHeaders: ['Content-Type'],
 }));
 
@@ -58,19 +34,53 @@ app.post('/api/od', async (c) => {
     const from_station = parseStation(body.from_station);
     const to_station = parseStation(body.to_station);
 
-    let res;
-
-    if (from_station != "null" && to_station != "null") {
-        res = from_to_query.all({ $from_station: from_station, $to_station: to_station, $start_time: start_time, $end_time: end_time });
-    }
-    else if (from_station != "null") {
-        res = from_query.all({ $from_station: from_station, $start_time: start_time, $end_time: end_time }).slice(0, 15);
-    }
-    else if (to_station != "null") {
-        res = to_query.all({ $to_station: to_station, $start_time: start_time, $end_time: end_time }).slice(0, 15);
-    }
+    const res = await getPassengerOD("mrt_od_202307", start_time, end_time, from_station, to_station);
 
     return c.json(res);
 });
+
+async function getPassengerOD(table: string, startTime: number, endTime: number, fromStation: string, toStation: string) {
+    let res;
+
+    if (fromStation != "null" && toStation != "null") {
+
+        /*
+        SELECT SUM(count) as Total_Passengers
+        FROM \"mrt_od_202307\"
+        WHERE entry = \"石牌\" AND exit = \"士林\" AND time >= 8 AND time < 12
+        GROUP BY entry, exit
+        ORDER BY Total_Passengers DESC;
+        */
+        res = await psql`
+            SELECT SUM(count) as Total_Passengers
+            FROM ${ psql(table) }
+            WHERE entry = ${ fromStation } AND exit = ${ toStation } AND time >= ${ startTime } AND time < ${ endTime }
+            GROUP BY entry, exit
+            ORDER BY Total_Passengers DESC
+            LIMIT 20;
+        `;
+    }
+    else if (fromStation != "null") {
+        res = await psql`
+            SELECT exit, SUM(count) as Total_Passengers
+            FROM ${ psql(table) }
+            WHERE entry = ${fromStation} AND time >= ${startTime} AND time < ${endTime}
+            GROUP BY exit
+            ORDER BY Total_Passengers DESC
+            LIMIT 20;
+        `;
+    }
+    else if (toStation != "null") {
+        res = await psql`
+            SELECT entry, SUM(count) as Total_Passengers
+            FROM ${ psql(table) }
+            WHERE exit = ${toStation} AND time >= ${startTime} AND time < ${endTime}
+            GROUP BY entry
+            ORDER BY Total_Passengers DESC
+            LIMIT 20;
+        `;
+    }
+    return res;
+}
 
 export default app
