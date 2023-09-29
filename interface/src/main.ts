@@ -124,7 +124,7 @@ fetch('/data/metro-station.json')
 
             console.log(body);
 
-            fetch(import.meta.env.VITE_BACKEND_URL, {
+            fetch(import.meta.env.VITE_BACKEND_URL + '/api/od', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'Application/json'
