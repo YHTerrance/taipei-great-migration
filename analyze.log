@@ -1,0 +1,2033 @@
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated the most popular routes
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting stations
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting stations
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting 118 stations
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting 118 stations
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting 118 stations
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting 6858 routes
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting 6858 routes
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting 6858 routes
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting 118 stations info
+INFO:root:Inserting 7 passengers by day of week
+INFO:root:Inserting 21 passengers by time of day
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting 118 stations info
+INFO:root:Inserting 7 passengers by day of week
+INFO:root:Inserting 21 passengers by time of day
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting total passengers
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting total passengers
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Inserting total passengers
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50
+INFO:root:Processing file ./data/202306.csv
+INFO:root:Calculated total passengers
+DEBUG:root:54957401
+INFO:root:Caculated routes by popularity
+DEBUG:root:            站一    站二      人次
+3496      台北車站    西門  410047
+3442      台北車站   市政府  288922
+3169  台北101/世貿  台北車站  219567
+3480      台北車站    淡水  203082
+3448      台北車站  忠孝復興  203073
+...        ...   ...     ...
+5647      新埔民生   頭前庄       0
+680         中原   頭前庄       0
+6300        板新   頭前庄       0
+4182       大坪林    板新       0
+5896        景安    景平       0
+
+[6858 rows x 3 columns]
+INFO:root:Calculated the most popular stations
+DEBUG:root:        站       人次
+34   台北車站  7580908
+106    西門  3664910
+52    市政府  3280345
+7      中山  2519104
+58   忠孝復興  2321963
+..    ...      ...
+5      中原    43175
+81     板新    35631
+93    秀朗橋    34092
+83     橋和    31401
+66   新埔民生    15905
+
+[118 rows x 2 columns]
+INFO:root:Calculated the average number of passengers by time of day
+DEBUG:root:    時段             人次
+0    0   11051.433333
+1    1     332.466667
+2    5      38.900000
+3    6   25548.200000
+4    7   99677.066667
+5    8  185410.633333
+6    9  110605.200000
+7   10   80550.133333
+8   11   83669.200000
+9   12   87387.866667
+10  13   91428.833333
+11  14   86857.233333
+12  15   87951.966667
+13  16  108935.200000
+14  17  154418.266667
+15  18  203108.866667
+16  19  139440.500000
+17  20   91506.233333
+18  21   86058.766667
+19  22   68826.166667
+20  23   29110.233333
+INFO:root:Calculated the average number of passengers by day of week
+DEBUG:root:     weekday          人次
+0     Monday  1917050.75
+1    Tuesday  1977490.00
+2  Wednesday  2014995.75
+3   Thursday  1854349.80
+4     Friday  1998886.60
+5   Saturday  1682549.75
+6     Sunday  1330718.50

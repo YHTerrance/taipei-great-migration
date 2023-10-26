@@ -1,3 +1,10 @@
 .env
 .venv
+.DS_Store
 data
+**/*.pkl
+
+**/.history
+**/__pycache__
+
+logs
