@@ -119,15 +119,16 @@ def get_stations_by_popularity(routes):
 
 
 def save_stations(eng, stations):
-    # Insert station id and insert first
+    # Insert station ids and names into the database
     with eng.connect() as connection:
         logging.info("Inserting %d stations", len(stations))
         for station in stations:
+            logging.info("Inserting station %s", station)
             query = text("""
             INSERT IGNORE INTO Stations (station_name)
             VALUES (%s)
             """)
-        result = connection.execute(query, station)
+            result = connection.execute(query, station)
         connection.commit()
     return result
 
@@ -266,9 +267,16 @@ if __name__ == "__main__":
 
         passengers_by_day_of_week = get_passengers_by_day_of_week(data)
 
-        # save_stations(engine, stations_by_popularity['站'])
-        '''
+        # Save results to the database
         station_id_mapping = get_station_id_mapping(engine)
+        stations_to_insert = \
+            stations_by_popularity[~stations_by_popularity['站'].isin(
+                station_id_mapping.keys()
+            )]
+
+        if len(stations_to_insert) > 0:
+            save_stations(engine, stations_to_insert)
+            station_id_mapping = get_station_id_mapping(engine)
 
         save_routes(
             engine,
@@ -283,11 +291,13 @@ if __name__ == "__main__":
             station_id_mapping,
             stations_by_popularity
         )
+
         save_passengers_by_day_of_week(
             engine,
             data_month,
             passengers_by_day_of_week
         )
+
         save_passengers_by_time_of_day(
             engine,
             data_month,
@@ -295,4 +305,3 @@ if __name__ == "__main__":
         )
 
         save_total_passengers(engine, data_month, total_passengers)
-        '''

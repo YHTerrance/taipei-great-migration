@@ -74,6 +74,7 @@ try:
             month DATE,
             total_passengers BIGINT,
             INDEX(month)
+            UNIQUE(month)
         )
         """)
 
