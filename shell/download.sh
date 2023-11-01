@@ -11,16 +11,16 @@ save_path="../data"
 year="2023"
 
 # Loop over the desired file numbers
-for num in {1..1}
+for num in {9..9}
 do
   # Pad single digit numbers with a leading zero
   padded_num=$(printf "%02d" $num)
-  
+
   file="${year}${padded_num}"
 
   # Construct the full URL
   full_url="${base_url}${file}.csv"
-  
+
   # Construct the output file name
   output_file="${save_path}/${file}.csv"
 

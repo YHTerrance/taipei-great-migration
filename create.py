@@ -54,6 +54,21 @@ try:
         )
         """)
 
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS StationPassengersByTimePeriod (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            station_id INT,
+            month DATE,
+            time_period INT,
+            passengers_in FLOAT,
+            passengers_out FLOAT,
+            INDEX(station_id),
+            INDEX(month),
+            INDEX(time_period),
+            UNIQUE(station_id, month, time_period)
+        )
+        """)
+
         # Create passengers by weekday table
         cursor.execute("""
         CREATE TABLE IF NOT EXISTS PassengersByWeekday (
@@ -67,13 +82,27 @@ try:
         )
         """)
 
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS StationPassengersByWeekday (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            station_id INT,
+            month DATE,
+            weekday VARCHAR(255),
+            avg_passengers FLOAT,
+            INDEX(station_id),
+            INDEX(month),
+            INDEX(weekday),
+            UNIQUE(station_id, month, weekday)
+        )
+        """)
+
         # Create total passengers table
         cursor.execute("""
         CREATE TABLE IF NOT EXISTS TotalPassengers (
             id INT AUTO_INCREMENT PRIMARY KEY,
             month DATE,
             total_passengers BIGINT,
-            INDEX(month)
+            INDEX(month),
             UNIQUE(month)
         )
         """)
